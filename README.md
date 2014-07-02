@@ -9,25 +9,45 @@ It has been implemented using the Core Graphics framework without any images. So
 Installation
 ============
 
-### Manually
-Copy the YLProgressBar folder into your project and then simply import the "YLProgressBar.h" in the file(s) you would like to use it in.
+The recommended approach to use the _YLProgressBar_ in your project is using the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
 
-### Using CocoaPods
+#### CocoaPods
 
-The YLProgressBar can also be added to a project using [CocoaPods](https://github.com/CocoaPods/CocoaPods) by adding this line to your podfile:
+Install CocoaPods if not already available:
 
+``` bash
+$ [sudo] gem install cocoapods
+$ pod setup
 ```
-// Podfile
-pod 'YLProgressBar'
+Go to the directory of your Xcode project, and Create and Edit your Podfile and add YLProgressBar:
+
+``` bash
+$ cd /path/to/MyProject
+$ touch Podfile
+$ edit Podfile
+platform :ios
+pod 'YLProgressBar', '~> 3.1.1'
 ```
-and
+
+Install into your project:
+
+``` bash
+$ pod install
 ```
-pod install
+
+Open your project in Xcode from the .xcworkspace file (not the usual project file)
+
+``` bash
+$ open MyProject.xcworkspace
 ```
+
+#### Manually
+
+[Download](https://github.com/YannickL/YLProgressBar/archive/master.zip) the project and copy the `YLProgressBar` folder into your project and then simply `#import "YLProgressBar.h"` in the file(s) you would like to use it in.
 
 # How To Use
 
-Here are some examples to show you how you can configure the YLProgressBar:
+Here are some examples to show you how the `YLProgressBar` can be configured:
 
 ```objc
 // Blue flat progress, with no stripes
@@ -57,7 +77,7 @@ _progressBar.progressTintColors       = @[[UIColor colorWithRed:33/255.0f green:
                                           [UIColor colorWithRed:111/255.0f green:188/255.0f blue:84/255.0f alpha:1.0f]];
 ```
 
-You can also configure every YLProgressBar using the UIAppearence protocol, which can be done in your app delegate:
+You can also use the `UIAppearence` protocol to configure all the progress bar:
 
 ```objc
 [[YLProgressBar appearance] setType:YLProgressBarTypeFlat];
